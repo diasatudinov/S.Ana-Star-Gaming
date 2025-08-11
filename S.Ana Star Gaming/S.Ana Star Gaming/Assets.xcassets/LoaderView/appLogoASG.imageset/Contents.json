@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "appLogoASG.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

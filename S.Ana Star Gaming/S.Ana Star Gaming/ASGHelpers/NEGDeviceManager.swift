@@ -1,3 +1,10 @@
+//
+//  NEGDeviceManager.swift
+//  S.Ana Star Gaming
+//
+//
+
+
 import UIKit
 
 class NEGDeviceManager {

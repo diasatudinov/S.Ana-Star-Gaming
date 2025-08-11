@@ -1,3 +1,10 @@
+//
+//  NEGUser.swift
+//  S.Ana Star Gaming
+//
+//
+
+
 import SwiftUI
 
 class NEGUser: ObservableObject {

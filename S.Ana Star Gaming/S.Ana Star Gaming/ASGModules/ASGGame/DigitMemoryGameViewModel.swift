@@ -10,9 +10,7 @@ import AVFoundation
 
 // MARK: - ViewModel
 final class DigitMemoryGameViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
-    enum Phase {
-        case idle, playing, awaitingInput, failed, success, completed
-    }
+    enum Phase { case idle, playing, awaitingInput, failed, success, completed }
 
     let totalRounds: Int = 9
     let baseLength: Int = 4
@@ -31,6 +29,13 @@ final class DigitMemoryGameViewModel: NSObject, ObservableObject, AVSpeechSynthe
     override init() {
         super.init()
         synthesizer.delegate = self
+        updateTargetLength()
+        prepareRound()
+    }
+
+    // Allow external configuration
+    func setRound(_ round: Int) {
+        currentRound = max(1, min(totalRounds, round))
         updateTargetLength()
         prepareRound()
     }

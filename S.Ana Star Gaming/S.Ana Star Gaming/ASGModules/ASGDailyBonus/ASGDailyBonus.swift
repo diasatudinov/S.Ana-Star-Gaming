@@ -16,8 +16,6 @@ struct ASGDailyBonus: View {
         ZStack {
             VStack(spacing: 0) {
                 
-                
-                
                 HStack(alignment: .top) {
                     Button {
                         presentationMode.wrappedValue.dismiss()

@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct LevelSelectView: View {
-    @AppStorage("unlockedRound") private var unlockedRound: Int = 1
+    @AppStorage("unlockedRound4") private var unlockedRound: Int = 1
     private let totalRounds = 9
     @Environment(\.presentationMode) var presentationMode
 
@@ -65,6 +65,7 @@ struct LevelSelectView: View {
                 DigitMemoryGameView(startRound: round) { passedRound in
                     if passedRound >= unlockedRound {
                         unlockedRound = min(passedRound + 1, totalRounds)
+                        NEGUser.shared.updateUserMoney(for: 500)
                     }
                 }
             }

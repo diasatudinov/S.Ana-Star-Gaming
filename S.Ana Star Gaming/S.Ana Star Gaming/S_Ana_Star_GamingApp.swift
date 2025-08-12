@@ -8,9 +8,12 @@ import SwiftUI
 
 @main
 struct S_Ana_Star_GamingApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NGRoot()
+                .preferredColorScheme(.light)
         }
     }
 }

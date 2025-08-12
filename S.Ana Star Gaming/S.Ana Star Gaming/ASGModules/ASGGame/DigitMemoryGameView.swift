@@ -242,11 +242,11 @@ struct DigitMemoryGameView: View {
                             Image(.playBtnASG)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 140:70)
+                                .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 120:70)
                         }.disabled(vm.isSpeaking)
                         Spacer()
-                    }.padding(.leading, NEGDeviceManager.shared.deviceType == .pad ? 60:35)
-                }.frame(height: NEGDeviceManager.shared.deviceType == .pad ? 200:100)
+                    }.padding(.leading, NEGDeviceManager.shared.deviceType == .pad ? 120:35)
+                }.frame(height: NEGDeviceManager.shared.deviceType == .pad ? 150:100)
                 
                 inputStrip
                 keypad
@@ -256,23 +256,23 @@ struct DigitMemoryGameView: View {
                     Image(.codeResetASG)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 110:60)
+                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 90:60)
                 }
                 HStack {
                     Image(.confirmationBtnASG)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 110:60)
+                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 90:60)
                     
                     Image(.backIconASG)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 110:60)
+                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 90:60)
                     
                     Image(.resetBtnASG)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 110:55)
+                        .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 90:55)
                 }
             }
             .padding(20)
@@ -387,7 +387,8 @@ struct DigitMemoryGameView: View {
             Text("\(n)")
                 .font(.title2).bold()
                 .frame(maxWidth: .infinity)
-                .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 140:70)
+                .foregroundStyle(.white)
+                .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 100:70)
                 .background(
                     Image(.numBgASG)
                         .resizable()

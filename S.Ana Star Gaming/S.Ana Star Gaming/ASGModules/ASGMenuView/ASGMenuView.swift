@@ -15,9 +15,7 @@ struct ASGMenuView: View {
     @State private var showCalendar = false
     @State private var showDailyTask = false
     
-//    @StateObject var achievementVM = NEGAchievementsViewModel()
-//    @StateObject var settingsVM = NGSettingsViewModel()
-//    @StateObject var shopVM = NEGShopViewModel()
+    @StateObject var achievementVM = NEGAchievementsViewModel()
     
     var body: some View {
         
@@ -69,15 +67,6 @@ struct ASGMenuView: View {
                             .scaledToFit()
                             .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 120:60)
                     }
-                    
-                    Button {
-                        showSettings = true
-                    } label: {
-                        Image(.settingsIconASG)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: NEGDeviceManager.shared.deviceType == .pad ? 120:60)
-                    }
                 }
                 Spacer()
                 
@@ -103,19 +92,18 @@ struct ASGMenuView: View {
             }
         )
         .fullScreenCover(isPresented: $showGame) {
-//            NGRoundSelectionView()
+            NavigationStack {
+                LevelSelectView()
+            }
         }
         .fullScreenCover(isPresented: $showAchievement) {
-//            NEGAchievementsView(viewModel: achievementVM)
+            ASGAchievementsView(viewModel: achievementVM)
         }
         .fullScreenCover(isPresented: $showShop) {
-//            NEGShopView(viewModel: shopVM)
-        }
-        .fullScreenCover(isPresented: $showSettings) {
-//            NEGSettingsView(settingsVM: settingsVM)
+            ASGShopView()
         }
         .fullScreenCover(isPresented: $showDailyTask) {
-//            DailyRewardsView()
+            ASGDailyBonus()
         }
     }
     

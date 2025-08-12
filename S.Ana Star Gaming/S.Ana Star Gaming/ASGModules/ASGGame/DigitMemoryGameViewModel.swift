@@ -2,7 +2,6 @@
 //  DigitMemoryGameViewModel 2.swift
 //  S.Ana Star Gaming
 //
-//  Created by Dias Atudinov on 12.08.2025.
 //
 
 import SwiftUI
